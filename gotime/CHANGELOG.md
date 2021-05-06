@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v0.0.1
+## v0.0.1+dev
 * [47d1151](https://github.com/urianchang/LearnGo/commit/47d1151766ee58b55d483ef391eedcb2da263209) Initial Commit
 * [7a37112](https://github.com/urianchang/LearnGo/commit/7a37112c75c7548b44322de59a223dd1a79f29ae) Used cobra init to initialize a new project
 * [de7dc95](https://github.com/urianchang/LearnGo/commit/de7dc950c1c45813f88edc18e4335f449f8fc7d8) Added hello world command
