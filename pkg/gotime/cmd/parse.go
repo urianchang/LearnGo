@@ -16,40 +16,42 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
+	"strconv"
 	"time"
+
+	"github.com/spf13/cobra"
 )
 
-var get_epoch bool
+func init() {
+	rootCmd.AddCommand(parseCmd)
+}
 
-// nowCmd represents the now command
-var nowCmd = &cobra.Command{
-	Use:   "now",
-	Args: cobra.MaximumNArgs(1),
-	Short: "Get the current time",
-	Long: `Get the current time in a specified IANA time zone. The default time 
-zone is local.`,
+// parseCmd represents the parse command
+var parseCmd = &cobra.Command{
+	Use:   "parse",
+	Args: cobra.MinimumNArgs(1),
+	Short: "Parse epoch time",
+	Long: `Parses an epoch time value in seconds to a specified time zone. The
+default time zone is local.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		if get_epoch {
-			fmt.Println(time.Now().Unix())
-			return
+		var epochSec, err = strconv.ParseInt(args[0], 10, 64)
+		if err != nil {
+			fmt.Println("Unable to parse input")
 		}
 
-		if len(args) == 1 {
-			zone := args[0]
+		var localTime = time.Unix(epochSec, 0)
+		if len(args) == 2 {
+			zone := args[1]
 			loc, err := time.LoadLocation(zone)
 			if err != nil {
 				fmt.Printf("%s is not a supported time zone\n", zone)
 			} else {
-				fmt.Println(time.Now().In(loc))
+				fmt.Println(localTime.In(loc))
 			}
 		} else {
-			fmt.Println(time.Now())
+			fmt.Println(localTime)
 		}
 	},
 }
 
-func init() {
-	rootCmd.AddCommand(nowCmd)
-	nowCmd.PersistentFlags().BoolVarP(&get_epoch, "epoch", "e", false,"Returns the epoch time in seconds")
-}
+
