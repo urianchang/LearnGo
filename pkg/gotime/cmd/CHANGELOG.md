@@ -15,4 +15,5 @@ Prepping for an "alpha" release
 * Parse command to convert epoch time to a human readable timestamp ([2d791b9](https://github.com/urianchang/LearnGo/commit/2d791b9a4717f6bebf06c6da6c2c310f4c293b96)) 
 * Added README ([d5bd9d8](https://github.com/urianchang/LearnGo/commit/d5bd9d84799ee1efd454ca684f6bd5c24014984d))
 * Updated path to gotime command ([9de978c](https://github.com/urianchang/LearnGo/commit/9de978c61491cec6d8f464a0f9588e72b2dda175)) 
-* Added changelog and version command ([fef0e5e](https://github.com/urianchang/LearnGo/commit/fef0e5ee54eacff9ffd52a3ebb0d29fd853ef0bd)) 
+* Added changelog and version command ([#3](https://github.com/urianchang/LearnGo/pull/3)) 
+* Removed 'hello' command and updated 'version' command to print out changelog notes if a flag is passed ([#4](https://github.com/urianchang/LearnGo/pull/4))
