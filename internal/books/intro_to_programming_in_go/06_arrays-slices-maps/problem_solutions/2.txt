@@ -1,4 +1,0 @@
-What is the length of a slice created using:
-  'make([]int, 3, 9)'
-
-Length is 3. First number is length; second number is capacity.
