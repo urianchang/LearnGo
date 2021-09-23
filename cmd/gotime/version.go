@@ -40,9 +40,7 @@ Details about changes can be found at: https://github.com/urianchang/LearnGo/blo
 		},
 		SilenceUsage: true,
 	}
-
 	cmd.Flags().BoolVar(&ReleaseNotes, "verbose", false, "Print out release notes")
-
 	return cmd
 }
 
