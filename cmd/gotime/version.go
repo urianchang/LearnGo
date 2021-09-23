@@ -1,4 +1,4 @@
-package cmd
+package gotime
 
 import (
 	"bufio"
@@ -24,7 +24,7 @@ func NewVersionCmd() *cobra.Command {
 		Short: "Shows CLI version",
 		Long: `Shows the version of the gotime CLI tool.
 
-Details about changes can be found at: https://github.com/urianchang/LearnGo/blob/master/pkg/gotime/cmd/CHANGELOG.md.`,
+Details about changes can be found at: https://github.com/urianchang/LearnGo/blob/master/pkg/gotime/gotime/CHANGELOG.md.`,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			_, err := fmt.Fprintln(cmd.OutOrStdout(), Version)
 			if err != nil {
@@ -40,9 +40,7 @@ Details about changes can be found at: https://github.com/urianchang/LearnGo/blo
 		},
 		SilenceUsage: true,
 	}
-
 	cmd.Flags().BoolVar(&ReleaseNotes, "verbose", false, "Print out release notes")
-
 	return cmd
 }
 

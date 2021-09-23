@@ -1,4 +1,4 @@
-package cmd
+package gotime
 
 import (
 	_ "embed"
