@@ -42,6 +42,6 @@ func TestNewNowCmd(t *testing.T) {
 	t.Run("Error: Invalid time zone", func(t *testing.T) {
 		cmd.SetArgs([]string{"PST"})
 		err := cmd.Execute()
-		assert.EqualError(t, err, "PST is not a supported time zone\n")
+		assert.EqualError(t, err, "PST is not a supported time zone")
 	})
 }

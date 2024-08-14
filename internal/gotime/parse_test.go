@@ -2,11 +2,12 @@ package gotime
 
 import (
 	"bytes"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"strconv"
 	"testing"
 	"time"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestNewParseCmd(t *testing.T) {
@@ -21,7 +22,7 @@ func TestNewParseCmd(t *testing.T) {
 	t.Run("Error: invalid time zone", func(t *testing.T) {
 		cmd.SetArgs([]string{epochNow, "PST"})
 		err := cmd.Execute()
-		assert.EqualError(t, err, "PST is not a supported time zone\n")
+		assert.EqualError(t, err, "PST is not a supported time zone")
 	})
 	t.Run("Success: Parse with time zone", func(t *testing.T) {
 		buf := new(bytes.Buffer)

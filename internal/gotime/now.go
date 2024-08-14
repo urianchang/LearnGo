@@ -33,7 +33,7 @@ zone is local.`,
 				zone := args[0]
 				loc, err := time.LoadLocation(zone)
 				if err != nil {
-					return fmt.Errorf("%s is not a supported time zone\n", zone)
+					return fmt.Errorf("%s is not a supported time zone", zone)
 				}
 				output = currentTime.In(loc)
 			}

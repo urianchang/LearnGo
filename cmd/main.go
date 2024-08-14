@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/urianchang/LearnGo/cmd/gotime"
+	"github.com/urianchang/LearnGo/internal/gotime"
 )
 
 func main() {
