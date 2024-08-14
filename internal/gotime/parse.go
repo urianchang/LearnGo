@@ -30,7 +30,7 @@ default time zone is local.`,
 				zone := args[1]
 				loc, e := time.LoadLocation(zone)
 				if e != nil {
-					return fmt.Errorf("%s is not a supported time zone\n", zone)
+					return fmt.Errorf("%s is not a supported time zone", zone)
 				}
 				localTime = localTime.In(loc)
 			}
